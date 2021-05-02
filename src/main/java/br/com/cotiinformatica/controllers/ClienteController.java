@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,6 +34,7 @@ public class ClienteController {
 	@Autowired
 	private ClienteService clienteService;
 
+	@CrossOrigin
 	@RequestMapping(value = RESOURCE, method = RequestMethod.POST)
 	@ResponseBody
 	public ResponseEntity<ClientePostResponse> post(@RequestBody ClientePostDTO dto) {
@@ -50,6 +52,7 @@ public class ClienteController {
 
 	}
 
+	@CrossOrigin
 	@RequestMapping(value = RESOURCE, method = RequestMethod.PUT)
 	@ResponseBody
 	public ResponseEntity<ClientePutResponse> put(@RequestBody ClientePutDTO dto) {
@@ -73,6 +76,7 @@ public class ClienteController {
 
 	}
 
+	@CrossOrigin
 	@RequestMapping(value = RESOURCE + "/{id}", method = RequestMethod.DELETE)
 	@ResponseBody
 	public ResponseEntity<ClienteDeleteResponse> delete(@PathVariable("id") Integer id) {
@@ -93,6 +97,7 @@ public class ClienteController {
 
 	}
 
+	@CrossOrigin
 	@RequestMapping(value = RESOURCE, method = RequestMethod.GET)
 	@ResponseBody
 	public ResponseEntity<List<ClienteGetDTO>> getAll() {
@@ -116,6 +121,7 @@ public class ClienteController {
 		}
 	}
 
+	@CrossOrigin
 	@RequestMapping(value = RESOURCE + "/{id}", method = RequestMethod.GET)
 	@ResponseBody
 	public ResponseEntity<ClienteGetDTO> get(@PathVariable("id") Integer id) {
@@ -132,6 +138,7 @@ public class ClienteController {
 		}
 	}
 
+	@CrossOrigin
 	@RequestMapping(value = RESOURCE + "?t={text}", method = RequestMethod.GET)
 	@ResponseBody
 	public ResponseEntity<ClienteGetDTO> get(@PathVariable("text") String text) {

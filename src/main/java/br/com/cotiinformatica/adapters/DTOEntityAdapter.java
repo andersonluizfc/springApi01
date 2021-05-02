@@ -2,7 +2,9 @@ package br.com.cotiinformatica.adapters;
 
 import br.com.cotiinformatica.dtos.ClientePostDTO;
 import br.com.cotiinformatica.dtos.ClientePutDTO;
+import br.com.cotiinformatica.dtos.UsuarioPostDTO;
 import br.com.cotiinformatica.entities.Cliente;
+import br.com.cotiinformatica.entities.Usuario;
 
 public class DTOEntityAdapter {
 	
@@ -27,6 +29,16 @@ public class DTOEntityAdapter {
 		
 		return cliente;
 		
+	}
+	
+	public static Usuario getUsuario(UsuarioPostDTO dto) {
+		Usuario usuario = new Usuario();
+		
+		usuario.setNome(dto.getNome());
+		usuario.setEmail(dto.getEmail());
+		usuario.setSenha(dto.getSenha());
+		
+		return usuario;
 	}
 
 }

@@ -3,9 +3,11 @@ package br.com.cotiinformatica.adapters;
 import java.util.Date;
 
 import br.com.cotiinformatica.entities.Cliente;
+import br.com.cotiinformatica.entities.Usuario;
 import br.com.cotiinformatica.responses.ClienteDeleteResponse;
 import br.com.cotiinformatica.responses.ClientePostResponse;
 import br.com.cotiinformatica.responses.ClientePutResponse;
+import br.com.cotiinformatica.responses.UsuarioPostResponse;
 
 public class EntityResponseAdapter {
 
@@ -48,5 +50,14 @@ public class EntityResponseAdapter {
 		return response;
 	}
 
-}
+	public static UsuarioPostResponse getUsuarioPostResponse(Usuario usuario) {
+		UsuarioPostResponse usuarioPostResponse = new UsuarioPostResponse();
 
+		usuarioPostResponse.setEmail(usuario.getEmail());
+		usuarioPostResponse.setIdUsuario(usuario.getIdUsuario());
+		usuarioPostResponse.setNome(usuario.getNome());
+
+		return usuarioPostResponse;
+	}
+
+}
